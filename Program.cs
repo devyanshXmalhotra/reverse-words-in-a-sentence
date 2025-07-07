@@ -1,4 +1,7 @@
-﻿string pangram = "The quick brown fox jumps over the lazy dog";
+﻿// Sentence reverse
+
+
+string pangram = "The quick brown fox jumps over the lazy dog";
 
 string[] message = pangram.Split(' ');
 
@@ -13,3 +16,21 @@ for (int i = 0; i < message.Length; i++)
 
 string result = String.Join(" ", newMessage);
 Console.WriteLine(result);
+
+
+// solution to parse a string of orders, sort orders and tag possible errors
+string orderStream = "B123,C234,A345,C15,B177,G3003,C235,B179";
+string[] items = orderStream.Split(',');
+Array.Sort(items);
+
+foreach (var item in items)
+{
+    if (item.Length == 4)
+    {
+        Console.WriteLine(item);
+    }
+    else
+    {
+        Console.WriteLine(item + "\t- Error");
+    }
+}
